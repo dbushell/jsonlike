@@ -1,0 +1,14 @@
+{
+  "name": "@dbushell/jsonlike",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./mod.ts",
+    "./types": "./types.ts"
+  },
+  "publish": {
+    "include": ["deno.json", "mod.ts", "types.ts", "LICENSE", "README.md"]
+  },
+  "lint": {
+    "include": ["**/*.ts"]
+  }
+}
