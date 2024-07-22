@@ -1,12 +1,12 @@
 /**
- * Just enough JavaScript object validation.
- *
  * @module
+ *
+ * Just enough JavaScript object validation.
  */
 import type {JSONObject, JSONPrimitive, JSONSchema, JSONValue} from './types.ts';
 
 /** Returns `true` if `value` is non-null object */
-const isObject = (value: JSONValue): boolean =>
+export const isObject = (value: JSONValue): boolean =>
   value !== null && typeof value === 'object' && !Array.isArray(value);
 
 /** Returns `true` if `value` is of type `primitive` */
