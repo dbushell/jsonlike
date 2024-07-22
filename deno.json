@@ -6,7 +6,8 @@
     "./types": "./types.ts"
   },
   "publish": {
-    "include": ["deno.json", "mod.ts", "types.ts", "LICENSE", "README.md"]
+    "include": ["deno.json", "mod.ts", "types.ts", "LICENSE", "README.md"],
+    "exclude": [".github"]
   },
   "lint": {
     "include": ["**/*.ts"]
