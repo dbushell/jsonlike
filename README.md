@@ -12,6 +12,8 @@ It can:
 
 ## Usage
 
+Packages for all runtimes: [jsr.io/@dbushell/jsonlike](https://jsr.io/@dbushell/jsonlike)
+
 ```ts
 import {jsonlike} from '@dbushell/jsonlike';
 
