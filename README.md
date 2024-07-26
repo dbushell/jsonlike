@@ -2,6 +2,8 @@
 
 Just enough JavaScript object validation.
 
+[![JSR](https://jsr.io/badges/@dbushell/jsonlike?labelColor=98e6c8)](https://jsr.io/@dbushell/jsonlike) [![JSR Score](https://jsr.io/badges/@dbushell/jsonlike/score?labelColor=98e6c8)](https://jsr.io/@dbushell/jsonlike) [![JSR](https://jsr.io/badges/@dbushell?labelColor=98e6c8)](https://jsr.io/@dbushell)
+
 **jsonlike** is a tiny < 1kB library used to validate JavaScript objects against a JSON-like schema.
 
 It can:
@@ -11,8 +13,6 @@ It can:
 * Match nested objects
 
 ## Usage
-
-Packages for all runtimes: [jsr.io/@dbushell/jsonlike](https://jsr.io/@dbushell/jsonlike)
 
 ```ts
 import {jsonlike} from '@dbushell/jsonlike';
