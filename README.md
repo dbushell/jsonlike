@@ -2,7 +2,7 @@
 
 Just enough JavaScript object validation.
 
-[![JSR](https://jsr.io/badges/@dbushell/jsonlike?labelColor=98e6c8)](https://jsr.io/@dbushell/jsonlike) [![JSR Score](https://jsr.io/badges/@dbushell/jsonlike/score?labelColor=98e6c8)](https://jsr.io/@dbushell/jsonlike) [![JSR](https://jsr.io/badges/@dbushell?labelColor=98e6c8)](https://jsr.io/@dbushell)
+[![JSR](https://jsr.io/badges/@dbushell/xml-streamify?labelColor=98e6c8&color=333)](https://jsr.io/@dbushell/@dbushell/jsonlike) [![NPM](https://img.shields.io/npm/v/@dbushell/jsonlike?labelColor=98e6c8&color=333)](https://www.npmjs.com/package/@dbushell/jsonlike)
 
 **jsonlike** is a tiny < 1kB library used to validate JavaScript objects against a JSON-like schema.
 
