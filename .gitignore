@@ -1,8 +1,10 @@
 /*
+/*.*
 !.gitignore
 !.github
-!LICENSE
-!README.md
 !deno.json
+!package.json
+!README.md
+!LICENSE
 !mod.ts
 !types.ts

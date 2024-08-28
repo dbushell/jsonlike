@@ -1,0 +1,27 @@
+{
+  "name": "@dbushell/jsonlike",
+  "version": "0.2.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbushell/jsonlike.git"
+  },
+  "description": "Just enough JavaScript object validation.",
+  "keywords": [
+    "json",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./mod.ts",
+    "./types": "./types.ts"
+  },
+  "types": "types.ts",
+  "files": [
+    "mod.ts",
+    "types.ts",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ]
+}
