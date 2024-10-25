@@ -7,7 +7,7 @@
   },
   "publish": {
     "include": ["mod.ts", "types.ts", "deno.json", "LICENSE", "README.md"],
-    "exclude": [".github", "package.json"]
+    "exclude": [".github", "test", "package.json"]
   },
   "fmt": {
     "include": ["**/*.ts", "**/*.json"]
