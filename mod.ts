@@ -3,26 +3,35 @@
  *
  * Just enough JavaScript object validation.
  */
-import type {JSONObject, JSONPrimitive, JSONSchema, JSONValue} from './types.ts';
+import type {
+  JSONObject,
+  JSONPrimitive,
+  JSONSchema,
+  JSONValue,
+} from "./types.ts";
 
 /** Returns `true` if `value` is non-null object */
-export const isObject = (value: JSONValue): boolean =>
-  value !== null && typeof value === 'object' && !Array.isArray(value);
+export const isObject = (value: JSONValue): value is JSONObject =>
+  value !== null && typeof value === "object" && Array.isArray(value) === false;
 
 /** Returns `true` if `value` is of type `primitive` */
-export const isPrimitive = (value: JSONValue, primitive: JSONPrimitive): boolean => {
+export const isPrimitive = (
+  value: JSONValue,
+  primitive: JSONPrimitive,
+): boolean => {
   switch (primitive) {
-    case 'array':
+    case "array":
       return Array.isArray(value);
-    case 'number':
-      return typeof value === 'number' && !Number.isNaN(value);
-    case 'null':
+    case "number":
+      return typeof value === "number" && Number.isNaN(value) === false;
+    case "null":
       return value === null;
-    case 'object':
+    case "object":
       return isObject(value);
-    case 'boolean':
-    case 'string':
-      return typeof value === primitive;
+    case "boolean":
+      return typeof value === "boolean";
+    case "string":
+      return typeof value === "string";
   }
 };
 
@@ -52,33 +61,29 @@ export const jsonlike = (json: JSONObject, schema: JSONSchema): boolean => {
   // Iterate over required keys
   for (const [key, type] of Object.entries(schema)) {
     // Check missing key
-    if (!Object.hasOwn(json, key)) {
+    if (Object.hasOwn(json, key) === false) {
       return false;
     }
-
     const value = json[key];
-
     // Check primitive type
-    if (typeof type === 'string') {
+    if (typeof type === "string") {
       if (isPrimitive(value, type)) {
         continue;
       }
       return false;
     }
-
     // Check single type array
     if (Array.isArray(type)) {
-      if (!Array.isArray(value)) {
+      if (Array.isArray(value) === false) {
         return false;
       }
       if (type.length) {
-        const primitive = typeof type[0] === 'string';
         for (const i of value) {
-          if (primitive) {
-            if (isPrimitive(i, type[0] as JSONPrimitive)) {
+          if (typeof type[0] === "string") {
+            if (isPrimitive(i, type[0])) {
               continue;
             }
-          } else if (jsonlike({i}, {i: type[0]})) {
+          } else if (jsonlike({ i }, { i: type[0] })) {
             continue;
           }
           return false;
@@ -86,17 +91,15 @@ export const jsonlike = (json: JSONObject, schema: JSONSchema): boolean => {
       }
       continue;
     }
-
     // Check nested objects
     if (isObject(type) && isObject(value)) {
-      if (jsonlike(value as JSONObject, type)) {
+      if (jsonlike(value, type)) {
         continue;
       }
     }
-
     // Unknown type
     return false;
   }
-
+  // Success!
   return true;
 };

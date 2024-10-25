@@ -1,8 +1,8 @@
 # 🍋‍🟩 jsonlike
 
-Just enough JavaScript object validation.
-
 [![JSR](https://jsr.io/badges/@dbushell/jsonlike?labelColor=98e6c8&color=333)](https://jsr.io/@dbushell/jsonlike) [![NPM](https://img.shields.io/npm/v/@dbushell/jsonlike?labelColor=98e6c8&color=333)](https://www.npmjs.com/package/@dbushell/jsonlike)
+
+Just enough JavaScript object validation.
 
 **jsonlike** is a tiny < 1kB library used to validate JavaScript objects against a JSON-like schema.
 
@@ -30,7 +30,7 @@ const valid = jsonlike(json, {
 
 ## Notes
 
-Use [Ajv](https://github.com/ajv-validator/ajv) for full schema validation.
+Use [Ajv](https://github.com/ajv-validator/ajv) or [Zod](https://github.com/colinhacks/zod) for full schema validation.
 
 * * *
 
